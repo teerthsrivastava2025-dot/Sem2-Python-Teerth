@@ -1,3 +1,5 @@
+import streamlit as st
+print('**Price Elasticity of Demand & Supply of different products**')
 products = ["Rice", "Milk", "Petrol", "Books"]
 
 prices = [40, 30, 100, 200]
@@ -7,14 +9,10 @@ quantities_supplied = [450, 280, 170, 120]
 demand_change_rate = [-0.2, -0.3, -0.05, -0.6]
 supply_change_rate = [0.25, 0.3, 0.1, 0.5]
 
-print("Available Products:")
-i = 0
-while i < len(products):
-    print(i + 1, ".", products[i])
-    i = i + 1
+st.title("Elasticity of Demand and Supply")
 
-choice = int(input("Select a product number: "))
-index = choice - 1
+product = st.selectbox("Select a product", products)
+index = products.index(product)
 
 price = prices[index]
 qd = quantities_demanded[index]
@@ -29,8 +27,8 @@ new_qs = qs + (qs * supply_change_rate[index])
 ped = ((new_qd - qd) / qd) / ((new_price - price) / price)
 pes = ((new_qs - qs) / qs) / ((new_price - price) / price)
 
-print("Product Selected:", products[index])
-print("Original Price:", price)
-print("New Price:", new_price)
-print("Price Elasticity of Demand:", ped)
-print("Price Elasticity of Supply:", pes)
+st.write("Product Selected:", product)
+st.write("Original Price:", price)
+st.write("New Price:", new_price)
+st.write("Price Elasticity of Demand:", ped)
+st.write("Price Elasticity of Supply:", pes)
