@@ -1,5 +1,5 @@
 import streamlit as st
-print('**Price Elasticity of Demand & Supply of different products**')
+
 products = ["Rice", "Milk", "Petrol", "Books"]
 
 prices = [40, 30, 100, 200]
@@ -9,7 +9,7 @@ quantities_supplied = [450, 280, 170, 120]
 demand_change_rate = [-0.2, -0.3, -0.05, -0.6]
 supply_change_rate = [0.25, 0.3, 0.1, 0.5]
 
-st.title("Elasticity of Demand and Supply")
+st.title("Price Elasticity of Demand & Supply of Different Products")
 
 product = st.selectbox("Select a product", products)
 index = products.index(product)
